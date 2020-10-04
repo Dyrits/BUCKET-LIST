@@ -14,7 +14,7 @@ TRAVAUX PRATIQUE
 - PHP
 - Symfony
 - Twig
-- SASS
+- Sass
 
 ### Statut
 Module 1 : Terminé  
@@ -22,4 +22,4 @@ Module 3 : Terminé
 
 #### Date de la dernière mise à jour
 03/10/2020  
-(README | 03/10/2020)
+(README | 04/10/2020)
