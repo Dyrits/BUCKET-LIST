@@ -4,20 +4,22 @@
   font-family: 'Amatic SC', cursive;
   width: 80%;
   margin: 0px auto;
+  header {
+    padding: 10px;
+    background-color: #EEE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      display: flex;
+      align-items: center;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      font-size: 2em;
+      li { margin: 0 5px; }
+    }
+  }
 }
 
-header {
-  padding: 10px;
-  background-color: #EEE;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  div {
-    display: flex;
-    align-items: center;
-  }
-  ul {
-    list-style: none;
-    font-size: 2em;
-  }
-}

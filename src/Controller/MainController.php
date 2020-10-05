@@ -17,4 +17,12 @@ class MainController extends Controller
     {
         return $this->render("main/home.html.twig");
     }
+
+    /**
+     * @Route("/about-us", name="default_about-us")
+     */
+    public function aboutUs()
+    {
+        return $this->render("main/about-us.html.twig");
+    }
 }

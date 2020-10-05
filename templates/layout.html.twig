@@ -6,8 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>{% block title %}Bucket-List{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset("./css/app.css") }}">
-        <link rel="icon" type="image/png" href={{ asset("./media/favicon.png") }}>
+        <link rel="stylesheet" href="{{ asset("css/app.css") }}">
+        <link rel="icon" type="image/png" href={{ asset("media/favicon.png") }}>
     {% endblock %}
 </head>
 
@@ -17,11 +17,13 @@
         <header>
             {% block header %}
                 <div>
-                    <img src={{ asset("media/logo.png") }} alt="Bucket-List Logo">
+                    <img src={{ asset("media/logo.png") }} />
                     <h1>Bucket List!</h1>
                 </div>
                 <ul>
                     <li><a href="{{ path("default_home") }}">Accueil</a></li>
+                    <li><a href="{{ path("idea_list") }}">Latest ideas</a></li>
+                    <li><a href="{{ path("default_about-us") }}">About Us</a></li>
                 </ul>
             {% endblock %}
         </header>

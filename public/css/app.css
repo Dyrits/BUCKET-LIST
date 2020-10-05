@@ -4,21 +4,24 @@
   width: 80%;
   margin: 0px auto;
 }
-
-header {
+.container header {
   padding: 10px;
   background-color: #EEE;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header div {
+.container header div {
   display: flex;
   align-items: center;
 }
-header ul {
+.container header ul {
+  display: flex;
   list-style: none;
   font-size: 2em;
+}
+.container header ul li {
+  margin: 0 5px;
 }
 
 /*# sourceMappingURL=app.css.map */
