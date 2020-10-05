@@ -1,6 +1,7 @@
 {% extends "layout.html.twig" %}
-{% block title %}{{ parent() }} | Detail (ID {{ id }}){% endblock %}
+{% block title %}{{ parent() }} | {{ idea.title }}{% endblock %}
 {% block main %}
-    <h1>Detail</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, molestiae voluptate? Dolor in ipsum magni mollitia, nisi nobis non obcaecati placeat sunt, vel velit voluptatibus.</p>
+    <h1>{{ idea.title }}</h1>
+    <p>{{ idea.description }}</p>
+    <p>By <i>{{ idea.author }}</i> ({{ idea.dateCreated|date("Y-m-d H:i") }})</p>
 {% endblock %}
