@@ -20,9 +20,9 @@ TRAVAUX PRATIQUE
 
 ### Statut
 Module 1 : Terminé  
-Module 3 : Terminé
+Module 3 : Terminé  
 Module 4 : Terminé  
-Module 5 : Terminé  
+Module 5 : Terminé   
 
 #### Date de la dernière mise à jour
 05/10/2020  
