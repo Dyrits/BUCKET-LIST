@@ -6,43 +6,59 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>{% block title %}Bucket-List{% endblock %}</title>
     {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset("css/app.css") }}">
         <link rel="icon" type="image/png" href={{ asset("media/favicon.png") }}>
     {% endblock %}
 </head>
 
 <body>
-<div class="container">
-    {% block container %}
-        <header>
-            {% block header %}
-                <div>
-                    <img src={{ asset("media/logo.png") }} />
-                    <h1>Bucket List!</h1>
-                </div>
-                <ul>
-                    <li><a href="{{ path("default_home") }}">Accueil</a></li>
-                    <li><a href="{{ path("idea_list") }}">Latest ideas</a></li>
-                    <li><a href="{{ path("default_about-us") }}">About Us</a></li>
-                </ul>
-            {% endblock %}
-        </header>
-        <main>{% block main %}{% endblock %}</main>
-        <footer>
-            {% block footer %}
-                <p>
-                    By Fabián Alexis (https://github.com/fabianalexisinostroza/Antu) [
-                    <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>],
-                    <a href="https://commons.wikimedia.org/wiki/File%3AAntu_color-fill.svg">via Wikimedia Commons</a>
-                </p>
-                <p>
-                    &copy; Bucket-List {{ "now"|date("Y") }}
-                </p>
-            {% endblock %}
-        </footer>
+    <div class="container">
+        {% block container %}
+            <header>
+                {% block header %}
+                    <div>
+                        <img src={{ asset("media/logo.png") }} />
+                        <h1>Bucket List!</h1>
+                    </div>
+                    <ul>
+                        <li><a href="{{ path("default_home") }}">Accueil</a></li>
+                        <li><a href="{{ path("idea_list") }}">Latest ideas</a></li>
+                        <li><a href="{{ path("default_about-us") }}">About Us</a></li>
+                    </ul>
+                {% endblock %}
+            </header>
+            <main>
+                {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="text-{{ label }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                {% block main %}
+                {% endblock %}
+            </main>
+            <hr>
+            <footer>
+                {% block footer %}
+                    <p>
+                        By Fabián Alexis (https://github.com/fabianalexisinostroza/Antu) [
+                        <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>],
+                        <a href="https://commons.wikimedia.org/wiki/File%3AAntu_color-fill.svg">via Wikimedia Commons</a>
+                    </p>
+                    <p>
+                        &copy; Bucket-List {{ "now"|date("Y") }}
+                    </p>
+                {% endblock %}
+            </footer>
+        {% endblock %}
+    </div>
+    {% block javascripts %}
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     {% endblock %}
-</div>
-{% block javascripts %}{% endblock %}
 </body>
 
 </html>

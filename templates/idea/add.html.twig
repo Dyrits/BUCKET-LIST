@@ -1,0 +1,9 @@
+{% extends "layout.html.twig" %}
+{% block title %}{{ parent() }} | Add an idea{% endblock %}
+{% block main %}
+    <h1>Add an idea</h1>
+    {{ form_start(ideaForm) }}
+    {{ form_widget(ideaForm) }}
+    <button type="submit" class="btn btn-success">Add!</button>
+    {{ form_end(ideaForm) }}
+{% endblock %}
