@@ -19,14 +19,15 @@ class IdeaController extends AbstractController
      */
     public function list(EntityManagerInterface $em)
     {
-        $ideas = $em->getRepository(Idea::class)->findBy(["isPublished" => true], ["dateCreated" => "DESC"]);
+        $ideas = $em->getRepository(Idea::class)->findAllWithCategories();
         return $this->render('idea/list.html.twig', ["ideas" => $ideas]);
     }
 
     /**
      * @Route("/{id}", name="idea_detail", requirements={"id": "\d+"})
      */
-    public function detail($id, EntityManagerInterface $em) {
+    public function detail($id, EntityManagerInterface $em)
+    {
        $idea = $em->getRepository(Idea::class)->find($id);
        return $this->render('idea/detail.html.twig', ["idea" => $idea]);
     }
@@ -34,7 +35,9 @@ class IdeaController extends AbstractController
     /**
      * @Route("/add", name="idea_add")
      */
-    public function add(EntityManagerInterface $em, Request $request) {
+    public function add(EntityManagerInterface $em, Request $request)
+    {
+        $this->denyAccessUnlessGranted("ROLE_USER");
         $idea = new Idea();
         $ideaForm =$this->createForm(IdeaType::class, $idea);
         $ideaForm->handleRequest($request);

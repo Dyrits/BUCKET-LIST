@@ -15,6 +15,12 @@ class IdeaType extends AbstractType
             ->add('title')
             ->add('description')
             ->add('author')
+            ->add(
+                'category',
+                null,
+                ["label" => "Category",
+                "choice_label" => "name"]
+            )
         ;
     }
 

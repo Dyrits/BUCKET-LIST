@@ -3,7 +3,10 @@
 {% block main %}
     <h1>Add an idea</h1>
     {{ form_start(ideaForm) }}
-    {{ form_widget(ideaForm) }}
+    {{ form_row(ideaForm.title) }}
+    {{ form_row(ideaForm.description) }}
+    {{ form_row(ideaForm.author, {'attr': {'value': app.user.username}}) }}
+    {{ form_row(ideaForm.category) }}
     <button type="submit" class="btn btn-success">Add!</button>
     {{ form_end(ideaForm) }}
 {% endblock %}

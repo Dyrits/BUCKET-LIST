@@ -4,14 +4,12 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-
 
 class MainController extends AbstractController
 {
     /**
-     * @Route("/", name="default_home")
+     * @Route("/", name="main_home")
      */
     public function home()
     {
@@ -19,7 +17,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/about-us", name="default_about-us")
+     * @Route("/about-us", name="main_about-us")
      */
     public function aboutUs()
     {

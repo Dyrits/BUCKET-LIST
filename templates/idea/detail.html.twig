@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 {% block title %}{{ parent() }} | {{ idea.title }}{% endblock %}
 {% block main %}
-    <h1>{{ idea.title }}</h1>
+    <h1>{{ idea.title }} <sub>-{{ idea.category.name }}-</sub></h1>
     <p>{{ idea.description }}</p>
     <p>By <i>{{ idea.author }}</i> ({{ idea.dateCreated|date("Y-m-d H:i") }})</p>
 {% endblock %}

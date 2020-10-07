@@ -3,10 +3,12 @@
 {% block main %}
     <h1>Lastest ideas</h1>
     {% for idea in ideas %}
-        <h2><a href="{{ path("idea_detail", {"id": idea.id}) }}">{{ idea.title }}</a> by {{ idea.author }}</h2>
+        <h2><a href="{{ path("idea_detail", {"id": idea.id}) }}">{{ idea.title }}</a><sub> -{{ idea.category.name }}- </sub> by {{ idea.author }}</h2>
     {% endfor %}
+    {% if app.user %}
     <hr>
     <form action={{ path("idea_add") }}>
-    <button type="submit" class="btn btn-info">Add an idea</button>
+        <button type="submit" class="btn btn-info">Add an idea</button>
     </form>
+    {% endif %}
 {% endblock %}

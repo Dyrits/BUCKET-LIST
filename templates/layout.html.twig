@@ -19,12 +19,19 @@
                 {% block header %}
                     <div>
                         <img src={{ asset("media/logo.png") }} />
-                        <h1>Bucket List!</h1>
+                        <h1> {% if app.user %} {{ app.user.username }}'s {% endif %} Bucket List!</h1>
                     </div>
                     <ul>
-                        <li><a href="{{ path("default_home") }}">Accueil</a></li>
+                        <li><a href="{{ path("main_home") }}">Accueil</a></li>
                         <li><a href="{{ path("idea_list") }}">Latest ideas</a></li>
-                        <li><a href="{{ path("default_about-us") }}">About Us</a></li>
+                        {% if app.user %}
+                            <li><a href="{{ path("idea_add") }}">Add your idea</a></li>
+                            <li><a href="{{ path("app_logout") }}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{{ path("app_login") }}">Login</a></li>
+                            <li><a href="{{ path("app_register") }}">Register</a></li>
+                        {% endif %}
+                        <li><a href="{{ path("main_about-us") }}">About Us</a></li>
                     </ul>
                 {% endblock %}
             </header>

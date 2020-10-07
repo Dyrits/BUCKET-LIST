@@ -19,6 +19,17 @@ class IdeaRepository extends ServiceEntityRepository
         parent::__construct($registry, Idea::class);
     }
 
+    public function findAllWithCategories()
+    {
+        return $this->createQueryBuilder('i')
+            ->addSelect('c')
+            ->join('i.category', 'c')
+            ->orderBy('i.dateCreated', 'DESC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     // /**
     //  * @return Idea[] Returns an array of Idea objects
     //  */
