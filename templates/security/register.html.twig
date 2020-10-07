@@ -1,0 +1,17 @@
+{% extends "layout.html.twig" %}
+
+{% block title %} Register | {{  parent() }}{% endblock %}
+
+{% block main %}
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% else %}
+        <h2>Register</h2>
+        {{ form_start(userForm) }}
+        {{ form_widget(userForm) }}
+        <button type="submit" class="btn btn-success">Register!</button>
+        {{ form_end(userForm) }}
+    {% endif %}
+{% endblock %}
