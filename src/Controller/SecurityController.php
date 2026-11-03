@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-class git SecurityController extends AbstractController
+class SecurityController extends AbstractController
 {
     /**
      * @Route("/register", name="app_register")
