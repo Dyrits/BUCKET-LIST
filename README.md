@@ -31,4 +31,4 @@ No license file is present.
 
 ## Archive and verification limits
 
-Archived as a learning reference at the owner's request. Twig advisories remain. A pre-existing syntax error in src/Controller/SecurityController.php (the stray git token in the class declaration) prevents treating this as a working application. The historical Symfony/PHP stack is not a currently supported production baseline. No hosted deployment or production database was verified.
+Archived as a learning reference at the owner's request. Twig advisories remain. The earlier SecurityController syntax error has been fixed; it is not a remaining blocker. The historical Symfony/PHP stack is not a currently supported production baseline. No hosted deployment or production database was verified.
