@@ -28,3 +28,7 @@ All modules (1, 3, 4, 5, 6, 7 and 8) are marked as completed in the original REA
 ## License
 
 No license file is present.
+
+## Archive and verification limits
+
+Archived as a learning reference at the owner's request. Twig advisories remain. A pre-existing syntax error in src/Controller/SecurityController.php (the stray git token in the class declaration) prevents treating this as a working application. The historical Symfony/PHP stack is not a currently supported production baseline. No hosted deployment or production database was verified.
